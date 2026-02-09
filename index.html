@@ -17,7 +17,7 @@
 
             --accent-cyan: #EBD31C;
             --accent-cyan-dim: #ebd31c4f;
-            --accent-blue: #3b82f6;
+            --accent-blue: #b0d1f5;
             --accent-purple: #8b5cf6;
             --accent-pink: #ec4899;
 
@@ -474,8 +474,8 @@
 
         .diagram-node {
             position: absolute;
-            width: 80px;
-            height: 80px;
+            width: 65px;
+            height: 65px;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 50%;
@@ -483,10 +483,11 @@
             align-items: center;
             justify-content: center;
             font-family: var(--font-mono);
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             color: var(--accent-cyan);
             text-align: center;
             transition: all 0.4s var(--timing-smooth);
+            padding: 0.5rem;
         }
 
         .diagram-node:hover {
@@ -496,14 +497,14 @@
         }
 
         .diagram-node.center {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
             border-color: var(--accent-cyan);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 500;
         }
 
@@ -511,12 +512,29 @@
             transform: translate(-50%, -50%) scale(1.05);
         }
 
-        .diagram-node:nth-child(2) { top: 10%; left: 20%; }
-        .diagram-node:nth-child(3) { top: 5%; right: 25%; }
-        .diagram-node:nth-child(4) { top: 40%; right: 5%; }
-        .diagram-node:nth-child(5) { bottom: 15%; right: 20%; }
-        .diagram-node:nth-child(6) { bottom: 10%; left: 25%; }
-        .diagram-node:nth-child(7) { top: 35%; left: 5%; }
+        .diagram-node.large {
+            width: 95px;
+            height: 95px;
+            font-size: 0.7rem;
+        }
+
+        .diagram-node.medium {
+            width: 75px;
+            height: 75px;
+            font-size: 0.65rem;
+        }
+
+        /* Node positions */
+        .diagram-node.node-1 { top: 5%; left: 15%; }
+        .diagram-node.node-2 { top: 0%; left: 50%; transform: translateX(-50%); }
+        .diagram-node.node-3 { top: 5%; right: 10%; }
+        .diagram-node.node-4 { top: 38%; right: 0%; }
+        .diagram-node.node-5 { bottom: 12%; right: 8%; }
+        .diagram-node.node-6 { bottom: 0%; left: 50%; transform: translateX(-50%); }
+        .diagram-node.node-7 { bottom: 12%; left: 8%; }
+        .diagram-node.node-8 { top: 38%; left: 0%; }
+        .diagram-node.node-9 { top: 22%; left: 32%; }
+        .diagram-node.node-10 { top: 22%; right: 28%; }
 
         .diagram-lines {
             position: absolute;
@@ -1183,18 +1201,32 @@
             }
 
             .about-visual {
-                height: 300px;
+                height: 320px;
             }
 
             .diagram-node {
-                width: 60px;
-                height: 60px;
-                font-size: 0.6rem;
+                width: 48px;
+                height: 48px;
+                font-size: 0.5rem;
+                padding: 0.25rem;
             }
 
             .diagram-node.center {
-                width: 90px;
-                height: 90px;
+                width: 85px;
+                height: 85px;
+                font-size: 0.7rem;
+            }
+
+            .diagram-node.large {
+                width: 68px;
+                height: 68px;
+                font-size: 0.55rem;
+            }
+
+            .diagram-node.medium {
+                width: 55px;
+                height: 55px;
+                font-size: 0.5rem;
             }
 
             .projects-grid {
@@ -1302,20 +1334,28 @@
                 <div class="about-visual reveal">
                     <div class="about-diagram">
                         <svg class="diagram-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
-                            <line x1="50" y1="50" x2="25" y2="15"/>
-                            <line x1="50" y1="50" x2="75" y2="10"/>
-                            <line x1="50" y1="50" x2="90" y2="45"/>
-                            <line x1="50" y1="50" x2="75" y2="85"/>
-                            <line x1="50" y1="50" x2="30" y2="85"/>
-                            <line x1="50" y1="50" x2="10" y2="40"/>
+                            <line x1="50" y1="50" x2="20" y2="12"/>
+                            <line x1="50" y1="50" x2="50" y2="8"/>
+                            <line x1="50" y1="50" x2="82" y2="12"/>
+                            <line x1="50" y1="50" x2="95" y2="45"/>
+                            <line x1="50" y1="50" x2="85" y2="85"/>
+                            <line x1="50" y1="50" x2="50" y2="95"/>
+                            <line x1="50" y1="50" x2="15" y2="85"/>
+                            <line x1="50" y1="50" x2="5" y2="45"/>
+                            <line x1="50" y1="50" x2="38" y2="28"/>
+                            <line x1="50" y1="50" x2="65" y2="28"/>
                         </svg>
                         <div class="diagram-node center">AI<br>Solutions</div>
-                        <div class="diagram-node">ML<br>Pipelines</div>
-                        <div class="diagram-node">Data<br>Architecture</div>
-                        <div class="diagram-node">Cloud<br>Native</div>
-                        <div class="diagram-node">GenAI<br>& LLMs</div>
-                        <div class="diagram-node">Analytics</div>
-                        <div class="diagram-node">MLOps</div>
+                        <div class="diagram-node medium node-1">ML<br>Pipelines</div>
+                        <div class="diagram-node large node-2">Data<br>Architecture</div>
+                        <div class="diagram-node node-3">Cloud<br>Native</div>
+                        <div class="diagram-node large node-4">GenAI<br>& LLMs</div>
+                        <div class="diagram-node medium node-5">Recommender<br>Systems</div>
+                        <div class="diagram-node medium node-6">Big Data</div>
+                        <div class="diagram-node node-7">Analytics</div>
+                        <div class="diagram-node medium node-8">MLOps</div>
+                        <div class="diagram-node node-9">Feature<br>Eng.</div>
+                        <div class="diagram-node node-10">Real-time</div>
                     </div>
                 </div>
             </div>
