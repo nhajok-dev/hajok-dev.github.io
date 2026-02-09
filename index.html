@@ -474,8 +474,8 @@
 
         .diagram-node {
             position: absolute;
-            width: 65px;
-            height: 65px;
+            width: 80px;
+            height: 80px;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 50%;
@@ -483,11 +483,12 @@
             align-items: center;
             justify-content: center;
             font-family: var(--font-mono);
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             color: var(--accent-cyan);
             text-align: center;
             transition: all 0.4s var(--timing-smooth);
-            padding: 0.5rem;
+            padding: 0.75rem;
+            line-height: 1.3;
         }
 
         .diagram-node:hover {
@@ -497,15 +498,16 @@
         }
 
         .diagram-node.center {
-            width: 130px;
-            height: 130px;
+            width: 140px;
+            height: 140px;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
             border-color: var(--accent-cyan);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 500;
+            padding: 1rem;
         }
 
         .diagram-node.center:hover {
@@ -513,28 +515,30 @@
         }
 
         .diagram-node.large {
-            width: 95px;
-            height: 95px;
-            font-size: 0.7rem;
+            width: 105px;
+            height: 105px;
+            font-size: 0.65rem;
+            padding: 1rem;
         }
 
         .diagram-node.medium {
-            width: 75px;
-            height: 75px;
-            font-size: 0.65rem;
+            width: 90px;
+            height: 90px;
+            font-size: 0.6rem;
+            padding: 0.85rem;
         }
 
-        /* Node positions */
-        .diagram-node.node-1 { top: 5%; left: 15%; }
-        .diagram-node.node-2 { top: 0%; left: 50%; transform: translateX(-50%); }
-        .diagram-node.node-3 { top: 5%; right: 10%; }
-        .diagram-node.node-4 { top: 38%; right: 0%; }
-        .diagram-node.node-5 { bottom: 12%; right: 8%; }
-        .diagram-node.node-6 { bottom: 0%; left: 50%; transform: translateX(-50%); }
-        .diagram-node.node-7 { bottom: 12%; left: 8%; }
-        .diagram-node.node-8 { top: 38%; left: 0%; }
-        .diagram-node.node-9 { top: 22%; left: 32%; }
-        .diagram-node.node-10 { top: 22%; right: 28%; }
+        /* Node positions - spread out more */
+        .diagram-node.node-1 { top: 2%; left: 8%; }
+        .diagram-node.node-2 { top: -5%; left: 50%; transform: translateX(-50%); }
+        .diagram-node.node-3 { top: 2%; right: 3%; }
+        .diagram-node.node-4 { top: 38%; right: -5%; }
+        .diagram-node.node-5 { bottom: 5%; right: 3%; }
+        .diagram-node.node-6 { bottom: -8%; left: 50%; transform: translateX(-50%); }
+        .diagram-node.node-7 { bottom: 5%; left: 3%; }
+        .diagram-node.node-8 { top: 38%; left: -5%; }
+        .diagram-node.node-9 { top: 20%; left: 28%; }
+        .diagram-node.node-10 { top: 20%; right: 24%; }
 
         .diagram-lines {
             position: absolute;
@@ -1201,32 +1205,35 @@
             }
 
             .about-visual {
-                height: 320px;
+                height: 350px;
             }
 
             .diagram-node {
-                width: 48px;
-                height: 48px;
-                font-size: 0.5rem;
-                padding: 0.25rem;
+                width: 55px;
+                height: 55px;
+                font-size: 0.45rem;
+                padding: 0.4rem;
             }
 
             .diagram-node.center {
-                width: 85px;
-                height: 85px;
-                font-size: 0.7rem;
+                width: 95px;
+                height: 95px;
+                font-size: 0.65rem;
+                padding: 0.6rem;
             }
 
             .diagram-node.large {
-                width: 68px;
-                height: 68px;
-                font-size: 0.55rem;
+                width: 72px;
+                height: 72px;
+                font-size: 0.5rem;
+                padding: 0.5rem;
             }
 
             .diagram-node.medium {
-                width: 55px;
-                height: 55px;
-                font-size: 0.5rem;
+                width: 62px;
+                height: 62px;
+                font-size: 0.48rem;
+                padding: 0.45rem;
             }
 
             .projects-grid {
