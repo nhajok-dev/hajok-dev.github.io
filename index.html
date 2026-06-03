@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nina Hajok | AI Architect & Senior ML Engineer</title>
+    <title>Nina Hajok | AI Architect</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -1232,6 +1232,82 @@
             color: var(--accent-champagne);
         }
 
+        /* Language Toggle */
+        body .lang-de { display: none; }
+        html.lang-de .lang-en { display: none; }
+        html.lang-de .lang-de { display: block; }
+        html.lang-de span.lang-de,
+        html.lang-de a.lang-de { display: inline; }
+
+        .lang-toggle {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            padding: 0.4rem 0.85rem;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.3s var(--timing-smooth);
+        }
+
+        .lang-toggle:hover {
+            border-color: var(--accent-champagne);
+            color: var(--accent-champagne);
+        }
+
+        /* Findings Section */
+        .findings-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .finding-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-top: 2px solid var(--accent-champagne);
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s var(--timing-smooth);
+        }
+
+        .finding-card:hover {
+            border-color: var(--accent-champagne);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .finding-number {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent-champagne);
+            letter-spacing: 0.1em;
+            margin-bottom: 1.25rem;
+            opacity: 0.7;
+        }
+
+        .finding-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+            line-height: 1.35;
+        }
+
+        .finding-body {
+            font-weight: 300;
+            color: var(--text-secondary);
+            line-height: 1.85;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 1024px) {
+            .findings-grid { grid-template-columns: 1fr; }
+        }
+
         /* Scroll Reveal Animation */
         .reveal {
             opacity: 0;
@@ -1411,13 +1487,15 @@
     <nav class="nav">
         <a href="#" class="nav-logo">nina_hajok</a>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about"><span class="lang-en">About</span><span class="lang-de">Über mich</span></a></li>
+            <li><a href="#findings"><span class="lang-en">Reality Check</span><span class="lang-de">Realitätscheck</span></a></li>
+            <li><a href="#services"><span class="lang-en">Services</span><span class="lang-de">Leistungen</span></a></li>
+            <li><a href="#experience"><span class="lang-en">Experience</span><span class="lang-de">Erfahrung</span></a></li>
+            <li><a href="#projects"><span class="lang-en">Projects</span><span class="lang-de">Projekte</span></a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact"><span class="lang-en">Contact</span><span class="lang-de">Kontakt</span></a></li>
         </ul>
+        <button class="lang-toggle" onclick="toggleLanguage()">DE</button>
         <div class="nav-toggle">
             <span></span>
             <span></span>
@@ -1427,22 +1505,38 @@
 
     <main>
         <section class="hero">
-            <div class="hero-badge">Available for Freelance Projects</div>
+            <div class="hero-badge">
+                <span class="lang-en">AI Architecture Design & Review</span>
+                <span class="lang-de">KI-Architektur Design & Review</span>
+            </div>
             <h1 class="hero-name"><span>Nina Hajok</span></h1>
-            <p class="hero-title"><span class="highlight">AI Architect</span> & Senior Machine Learning Engineer</p>
-            <p class="hero-description">
-                Designing scalable AI systems and production-grade ML solutions.
-                I translate complex business needs into robust, explainable, and efficient
-                technical solutions that drive real impact.
+            <p class="hero-title"><span class="highlight">AI Architect</span></p>
+            <p class="hero-description lang-en">
+                I design AI architectures - and I assess whether yours will hold.
+                Most initiatives fail at the architecture stage, long before code is written.
+                I work with companies to build the right architecture from scratch, or find
+                what needs to change before the wrong one is built out.
+                Strategy, roadmap, cost model. No cheerleading.
+            </p>
+            <p class="hero-description lang-de">
+                Ich designe KI-Architekturen - und ich bewerte, ob Ihre trägt.
+                Die meisten Initiativen scheitern auf Architekturebene, lange bevor Code geschrieben wird.
+                Ich arbeite mit Unternehmen daran, von Anfang an die richtige Architektur zu bauen,
+                oder zu finden, was sich ändern muss, bevor in die falsche investiert wird.
+                Strategie, Roadmap, Kostenmodell. Keine Euphorie.
             </p>
             <div class="hero-ctas">
                 <a href="#projects" class="btn btn-primary">
-                    View My Work
+                    <span class="lang-en">View My Work</span>
+                    <span class="lang-de">Meine Projekte</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
                 </a>
-                <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                <a href="#contact" class="btn btn-outline">
+                    <span class="lang-en">Start a Review</span>
+                    <span class="lang-de">Review anfragen</span>
+                </a>
             </div>
             <div class="hero-scroll">
                 <span>Scroll</span>
@@ -1454,35 +1548,72 @@
             <div class="about">
                 <div class="about-content reveal">
                     <div class="section-header">
-                        <div class="section-label">About Me</div>
-                        <h2 class="section-title">Building intelligent systems that matter</h2>
+                        <div class="section-label">
+                            <span class="lang-en">About</span>
+                            <span class="lang-de">Über mich</span>
+                        </div>
+                        <h2 class="section-title">
+                            <span class="lang-en">I design AI architectures that hold up in production.<br>That requires telling you honestly when yours won't.</span>
+                            <span class="lang-de">Ich designe KI-Architekturen, die in der Produktion tragen.<br>Das setzt voraus, Ihnen ehrlich zu sagen, wenn Ihre das nicht tut.</span>
+                        </h2>
                     </div>
-                    <p>
-                        I'm a strategic and hands-on AI professional with a proven track record of designing
-                        scalable data architectures, building production-grade ML systems, and driving AI
-                        adoption across organizations.
+                    <p class="lang-en">
+                        Every AI project needs someone who can both design the system and stress-test
+                        whether it'll actually work. I'm the technical half of that equation -
+                        I design architectures from scratch, evaluate existing ones, and build what
+                        the architecture requires. Starting with honest answers about what's feasible.
                     </p>
-                    <p>
-                        From AI enablement in public sector environments to overhauling enterprise data platforms
-                        and building real-time recommendation systems, I bring deep expertise in predictive modeling,
-                        data pipelines, and cloud-native infrastructure.
+                    <p class="lang-de">
+                        Jedes KI-Projekt braucht jemanden, der das System designen und gleichzeitig
+                        überprüfen kann, ob es wirklich funktioniert. Ich bin die technische Seite
+                        dieser Gleichung - ich designe Architekturen von Grund auf, bewerte bestehende,
+                        und baue, was die Architektur erfordert. Mit ehrlichen Antworten darüber,
+                        was machbar ist.
                     </p>
-                    <p>
-                        Based in Germany, I work remotely with clients across the EU, helping them leverage
-                        AI to solve complex challenges and unlock new opportunities.
+                    <p class="lang-en">
+                        In over 8 years building and reviewing ML systems, I've seen the patterns repeat:
+                        the LLM that was supposed to understand raw sensor data, the on-prem storage choice
+                        that made cloud deployment structurally impossible, the roadmap that assumed 18 months
+                        of training data was just there. These aren't edge cases. They're what happens when
+                        companies start building before they start thinking.
+                    </p>
+                    <p class="lang-de">
+                        In über 8 Jahren beim Aufbau und Review von ML-Systemen habe ich die Muster immer
+                        wieder gesehen: das LLM, das rohe Sensordaten 'verstehen' sollte, die On-Prem-Storage-
+                        Entscheidung, die Cloud-Deployment strukturell unmöglich machte, die Roadmap, die davon
+                        ausging, dass 18 Monate Trainingsdaten einfach vorhanden sind. Das sind keine Rand-
+                        phänomene. Das ist, was passiert, wenn Unternehmen zu bauen beginnen, bevor sie
+                        anfangen zu denken.
+                    </p>
+                    <p class="lang-en">
+                        The engagements that make sense are the ones where getting the architecture right
+                        matters more than getting started fast. That's what I'm here for.
+                    </p>
+                    <p class="lang-de">
+                        Die Projekte, die Sinn machen, sind die, bei denen es wichtiger ist, die Architektur
+                        richtig hinzubekommen, als schnell anzufangen. Dafür bin ich da.
                     </p>
                     <div class="about-stats">
                         <div class="stat">
                             <div class="stat-value">8+</div>
-                            <div class="stat-label">Years Experience</div>
+                            <div class="stat-label">
+                                <span class="lang-en">Years in Production ML</span>
+                                <span class="lang-de">Jahre in Production ML</span>
+                            </div>
                         </div>
                         <div class="stat">
                             <div class="stat-value">20+</div>
-                            <div class="stat-label">Projects Delivered</div>
+                            <div class="stat-label">
+                                <span class="lang-en">AI Systems Reviewed & Built</span>
+                                <span class="lang-de">KI-Systeme bewertet & gebaut</span>
+                            </div>
                         </div>
                         <div class="stat">
                             <div class="stat-value">M.Sc.</div>
-                            <div class="stat-label">Computer Science</div>
+                            <div class="stat-label">
+                                <span class="lang-en">Computer Science</span>
+                                <span class="lang-de">Informatik</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1499,25 +1630,112 @@
                             <line x1="50" y1="50" x2="2" y2="40"/>
                             <line x1="50" y1="50" x2="28" y2="25"/>
                         </svg>
-                        <div class="diagram-node center">AI<br>Solutions</div>
-                        <div class="diagram-node medium node-1">ML<br>Pipelines</div>
-                        <div class="diagram-node large node-2">Data<br>Architecture</div>
-                        <div class="diagram-node node-3">Cloud<br>Native</div>
-                        <div class="diagram-node large node-4">GenAI<br>& LLMs</div>
-                        <div class="diagram-node xlarge node-5">Recommender<br>Systems</div>
-                        <div class="diagram-node medium node-6">Big Data</div>
-                        <div class="diagram-node node-7">Analytics</div>
+                        <div class="diagram-node center">AI<br>Architect</div>
+                        <div class="diagram-node medium node-1">Data<br>Readiness</div>
+                        <div class="diagram-node large node-2">Use Case<br>Fit</div>
+                        <div class="diagram-node node-3">Infra-<br>structure</div>
+                        <div class="diagram-node large node-4">LLM<br>Design</div>
+                        <div class="diagram-node xlarge node-5">Deployment<br>Model</div>
+                        <div class="diagram-node medium node-6">Cost<br>Model</div>
+                        <div class="diagram-node node-7">Roadmap</div>
                         <div class="diagram-node medium node-8">MLOps</div>
-                        <div class="diagram-node node-9">Feature<br>Eng.</div>
+                        <div class="diagram-node node-9">Storage<br>Strategy</div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="findings">
+            <div class="section-header reveal">
+                <div class="section-label">
+                    <span class="lang-en">Reality Check</span>
+                    <span class="lang-de">Realitätscheck</span>
+                </div>
+                <h2 class="section-title">
+                    <span class="lang-en">What I find - and what it costs if no one does</span>
+                    <span class="lang-de">Was ich finde - und was es kostet, wenn niemand sucht</span>
+                </h2>
+            </div>
+            <div class="findings-grid">
+                <div class="finding-card reveal">
+                    <div class="finding-number">PATTERN 01</div>
+                    <h3 class="finding-title lang-en">"The LLM will just understand the data."</h3>
+                    <h3 class="finding-title lang-de">"Das LLM wird die Daten schon verstehen."</h3>
+                    <p class="finding-body lang-en">
+                        A proposed architecture had an LLM at the center, ingesting raw industrial
+                        sensor readings to "explain anomalies." LLMs require context, structure, and
+                        purpose-built preprocessing. Without it, you get outputs that sound confident
+                        and are wrong - consistently. This was the core load-bearing assumption of a
+                        six-figure AI initiative. No one had asked whether it was technically possible.
+                    </p>
+                    <p class="finding-body lang-de">
+                        Eine vorgeschlagene Architektur hatte ein LLM im Zentrum, das rohe industrielle
+                        Sensordaten einlesen sollte, um "Anomalien zu erklären." LLMs brauchen Kontext,
+                        Struktur und zweckgebautes Preprocessing. Ohne das entstehen Ausgaben, die
+                        selbstsicher klingen und falsch sind - konsistent. Das war die tragende
+                        Kernannahme einer sechsstelligen KI-Initiative. Niemand hatte gefragt,
+                        ob das technisch überhaupt möglich ist.
+                    </p>
+                </div>
+                <div class="finding-card reveal">
+                    <div class="finding-number">PATTERN 02</div>
+                    <h3 class="finding-title lang-en">The storage choice makes deployment impossible.</h3>
+                    <h3 class="finding-title lang-de">Die Storage-Wahl macht das Deployment unmöglich.</h3>
+                    <p class="finding-body lang-en">
+                        On-prem object storage plus real-time inference plus cloud API services:
+                        an architectural conflict that nobody flagged, because no single person
+                        saw the whole picture. The storage model isn't a detail - it determines
+                        the entire deployment architecture. Choose it last, or let a vendor choose
+                        it, and you rebuild from scratch when reality arrives. Choosing it first
+                        takes a conversation. Rebuilding takes months.
+                    </p>
+                    <p class="finding-body lang-de">
+                        On-Prem-Objektspeicher plus Echtzeit-Inferenz plus Cloud-API-Services:
+                        ein Architekturkonflikt, den niemand angemerkt hatte, weil kein Einzelner
+                        das ganze Bild sah. Das Storage-Modell ist kein Detail - es bestimmt die
+                        gesamte Deployment-Architektur. Wählt man es zuletzt, oder lässt einen
+                        Anbieter wählen, baut man von Grund auf neu, wenn die Realität eintrifft.
+                        Die richtige Wahl erfordert ein Gespräch. Der Neuaufbau erfordert Monate.
+                    </p>
+                </div>
+                <div class="finding-card reveal">
+                    <div class="finding-number">PATTERN 03</div>
+                    <h3 class="finding-title lang-en">7 use cases. 3 have the data they need.</h3>
+                    <h3 class="finding-title lang-de">7 Use Cases. 3 haben die Daten, die sie brauchen.</h3>
+                    <p class="finding-body lang-en">
+                        Companies arrive with ambitious AI roadmaps and a list of use cases. After
+                        feasibility assessment: some lack the required data entirely, some need
+                        18+ months of data collection before training is possible, some are
+                        technically sound but can't connect to the existing infrastructure.
+                        Without prioritization grounded in technical reality, teams build in
+                        parallel, hit the same walls in parallel, and stall in parallel.
+                        Knowing which three to start with isn't strategy - it's the difference
+                        between shipping and not.
+                    </p>
+                    <p class="finding-body lang-de">
+                        Unternehmen kommen mit ambitionierten KI-Roadmaps und einer Liste von
+                        Use Cases. Nach der Machbarkeitsbewertung: Einigen fehlt die erforderliche
+                        Datenbasis völlig, einige benötigen zuerst 18+ Monate Datenerfassung,
+                        einige sind technisch solide, können aber nicht an die bestehende
+                        Infrastruktur angebunden werden. Ohne in technischer Realität verankerte
+                        Priorisierung bauen Teams parallel, stoßen parallel an dieselben Grenzen
+                        und stagnieren parallel. Zu wissen, mit welchen drei man anfängt, ist
+                        nicht Strategie - es ist der Unterschied zwischen Liefern und Nicht-Liefern.
+                    </p>
                 </div>
             </div>
         </section>
 
         <section id="services">
             <div class="section-header reveal">
-                <div class="section-label">Services</div>
-                <h2 class="section-title">How I can help you</h2>
+                <div class="section-label">
+                    <span class="lang-en">Services</span>
+                    <span class="lang-de">Leistungen</span>
+                </div>
+                <h2 class="section-title">
+                    <span class="lang-en">What you get</span>
+                    <span class="lang-de">Was Sie bekommen</span>
+                </h2>
             </div>
             <div class="services-grid">
                 <div class="service-card reveal">
@@ -1526,16 +1744,37 @@
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">AI Architecture & Strategy</h3>
-                    <p class="service-description">
-                        Design sustainable AI infrastructure from the ground up. I help organizations
-                        build their AI capabilities with a focus on data validation, automation, and scalability.
-                        From proof-of-concept to full implementation.
+                    <h3 class="service-title">
+                        <span class="lang-en">Architecture Design & Audit</span>
+                        <span class="lang-de">Architektur Design & Audit</span>
+                    </h3>
+                    <p class="service-description lang-en">
+                        Whether you need an architecture designed from scratch or have a plan
+                        that needs an honest evaluation - this is the starting point.
+                        I design what should be built, assess what you already have, identify
+                        what won't work, and deliver a clear written output with decisions
+                        and reasoning you can act on.
+                    </p>
+                    <p class="service-description lang-de">
+                        Ob Sie eine Architektur von Grund auf brauchen oder einen Plan haben,
+                        der eine ehrliche Bewertung benötigt - hier fängt es an.
+                        Ich designe, was gebaut werden sollte, bewerte was Sie bereits haben,
+                        identifiziere was nicht funktioniert, und liefere ein klares schriftliches
+                        Ergebnis mit Entscheidungen und Begründungen, mit dem Sie handeln können.
                     </p>
                     <div class="service-tags">
-                        <span class="service-tag">Roadmap Planning</span>
-                        <span class="service-tag">Technology Assessment</span>
-                        <span class="service-tag">System Audits</span>
+                        <span class="service-tag">
+                            <span class="lang-en">Architecture Design</span>
+                            <span class="lang-de">Architektur Design</span>
+                        </span>
+                        <span class="service-tag">
+                            <span class="lang-en">Feasibility Assessment</span>
+                            <span class="lang-de">Machbarkeitsbewertung</span>
+                        </span>
+                        <span class="service-tag">
+                            <span class="lang-en">Written Verdict</span>
+                            <span class="lang-de">Schriftliches Urteil</span>
+                        </span>
                     </div>
                 </div>
                 <div class="service-card reveal">
@@ -1545,55 +1784,95 @@
                             <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">ML System Development</h3>
-                    <p class="service-description">
-                        Build production-ready machine learning systems that deliver real business value.
-                        Recommendation engines, predictive models, LLM integration, and more - all designed
-                        for reliability and performance.
+                    <h3 class="service-title">
+                        <span class="lang-en">AI Investment Protection</span>
+                        <span class="lang-de">KI-Investitionsschutz</span>
+                    </h3>
+                    <p class="service-description lang-en">
+                        Once the architecture is defined - whether I designed it or audited yours -
+                        I build the strategy around it. Use case prioritization, infrastructure decisions
+                        (on-prem vs. cloud, storage type, deployment model), a phased roadmap, and a
+                        cost model based on real numbers - not vendor estimates or analyst projections.
+                    </p>
+                    <p class="service-description lang-de">
+                        Sobald die Architektur feststeht - ob ich sie designt oder Ihre bewertet habe -
+                        entwickle ich die Strategie drum herum. Use-Case-Priorisierung,
+                        Infrastrukturentscheidungen (On-Prem vs. Cloud, Storage-Typ, Deployment-Modell),
+                        eine Phasen-Roadmap und ein Kostenmodell auf Basis realer Zahlen -
+                        nicht Anbieter-Schätzungen.
                     </p>
                     <div class="service-tags">
-                        <span class="service-tag">Recommendation Systems</span>
-                        <span class="service-tag">Predictive Models</span>
-                        <span class="service-tag">GenAI</span>
+                        <span class="service-tag">Roadmap</span>
+                        <span class="service-tag">
+                            <span class="lang-en">Cost Model</span>
+                            <span class="lang-de">Kostenmodell</span>
+                        </span>
+                        <span class="service-tag">
+                            <span class="lang-en">Infrastructure Blueprint</span>
+                            <span class="lang-de">Infrastruktur-Blueprint</span>
+                        </span>
                     </div>
                 </div>
                 <div class="service-card reveal">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <path d="M22 6l-10 7L2 6"/>
+                            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.44-3.16"/>
+                            <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.44-3.16"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">Data Engineering</h3>
-                    <p class="service-description">
-                        Design and implement scalable data pipelines and architectures that support
-                        real-time analytics and decision-making. Feature stores, ETL processes,
-                        and Big Data solutions using modern cloud technologies.
+                    <h3 class="service-title">
+                        <span class="lang-en">AI/ML Engineering</span>
+                        <span class="lang-de">AI/ML Engineering</span>
+                    </h3>
+                    <p class="service-description lang-en">
+                        When the architecture is right, I build it. Production-ready ML systems,
+                        LLM pipelines, recommendation engines, predictive models - held to the
+                        same standard I'd apply in a review. If it can't run reliably in production
+                        at scale, it doesn't ship.
+                    </p>
+                    <p class="service-description lang-de">
+                        Wenn die Architektur stimmt, baue ich sie. Produktionsreife ML-Systeme,
+                        LLM-Pipelines, Recommendation Engines, Vorhersagemodelle - gehalten am
+                        gleichen Standard, den ich im Review anlegen würde. Was nicht zuverlässig
+                        in der Produktion im Maßstab läuft, wird nicht ausgeliefert.
+                    </p>
+                    <div class="service-tags">
+                        <span class="service-tag">LLM Pipelines</span>
+                        <span class="service-tag">Recommendation Systems</span>
+                        <span class="service-tag">MLOps</span>
+                    </div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">
+                        <span class="lang-en">Data Foundation</span>
+                        <span class="lang-de">Datenfundament</span>
+                    </h3>
+                    <p class="service-description lang-en">
+                        AI is only as reliable as the infrastructure beneath it. I design and
+                        implement the data pipelines, storage architecture, and processing layer
+                        that your AI systems actually depend on - built for the scale and access
+                        patterns your use cases require, not generic best practices.
+                    </p>
+                    <p class="service-description lang-de">
+                        KI ist nur so zuverlässig wie die Infrastruktur darunter. Ich entwerfe und
+                        implementiere die Datenpipelines, Storage-Architektur und Verarbeitungsschicht,
+                        von der Ihre KI-Systeme wirklich abhängen - gebaut für die Skalierung und
+                        Zugriffsmuster, die Ihre Use Cases erfordern, nicht für generische Best Practices.
                     </p>
                     <div class="service-tags">
                         <span class="service-tag">Data Pipelines</span>
-                        <span class="service-tag">Big Data</span>
                         <span class="service-tag">Feature Stores</span>
-                    </div>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Technical Leadership</h3>
-                    <p class="service-description">
-                        Elevate your team's capabilities through code quality coaching, Clean Code workshops,
-                        and best practices training. I help establish engineering guidelines and mentor
-                        teams to build maintainable, high-quality software.
-                    </p>
-                    <div class="service-tags">
-                        <span class="service-tag">Clean Code Coaching</span>
-                        <span class="service-tag">Team Training</span>
-                        <span class="service-tag">Mentoring</span>
+                        <span class="service-tag">
+                            <span class="lang-en">Storage Architecture</span>
+                            <span class="lang-de">Storage-Architektur</span>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -1601,8 +1880,14 @@
 
         <section id="experience">
             <div class="section-header reveal">
-                <div class="section-label">Experience</div>
-                <h2 class="section-title">Career journey</h2>
+                <div class="section-label">
+                    <span class="lang-en">Experience</span>
+                    <span class="lang-de">Erfahrung</span>
+                </div>
+                <h2 class="section-title">
+                    <span class="lang-en">Career journey</span>
+                    <span class="lang-de">Karriereweg</span>
+                </h2>
             </div>
             <div class="timeline">
                 <div class="timeline-item reveal">
@@ -1610,15 +1895,23 @@
                     <div class="timeline-date">Feb 2024 - Present</div>
                     <div class="timeline-company">Freelancer | Remote EU</div>
                     <h3 class="timeline-role">Technical Lead AI & AI Architect</h3>
-                    <p class="timeline-description">
-                        Leading creation of AI divisions in regulated environments. Designing sustainable
-                        infrastructure focused on data validation, automation, and scalability. Complete
-                        architecture overhauls from system audits to production-ready implementations.
+                    <p class="timeline-description lang-en">
+                        Conducting AI architecture reviews and enablement strategies for companies entering AI.
+                        Evaluating proposed architectures, identifying feasibility issues, and delivering redesigns
+                        with roadmaps and cost models. Building AI capabilities in regulated environments from
+                        system audit to production-ready implementation.
+                    </p>
+                    <p class="timeline-description lang-de">
+                        Durchführung von KI-Architektur-Reviews und Enablement-Strategien für Unternehmen, die
+                        in KI einsteigen. Bewertung vorgeschlagener Architekturen, Identifikation von
+                        Machbarkeitsproblemen und Lieferung von Neugestaltungen mit Roadmaps und Kostenmodellen.
+                        Aufbau von KI-Fähigkeiten in regulierten Umgebungen von der Systemprüfung bis zur
+                        produktionsreifen Umsetzung.
                     </p>
                     <div class="timeline-highlights">
-                        <span class="timeline-highlight">Public Sector AI</span>
-                        <span class="timeline-highlight">Architecture Design</span>
-                        <span class="timeline-highlight">Team Leadership</span>
+                        <span class="timeline-highlight">Architecture Review</span>
+                        <span class="timeline-highlight">AI Enablement</span>
+                        <span class="timeline-highlight">Cost Modeling</span>
                     </div>
                 </div>
                 <div class="timeline-item reveal">
@@ -1626,10 +1919,15 @@
                     <div class="timeline-date">July 2023 - Present</div>
                     <div class="timeline-company">Freelancer | Remote EU</div>
                     <h3 class="timeline-role">Senior ML / AI & Data Engineer</h3>
-                    <p class="timeline-description">
+                    <p class="timeline-description lang-en">
                         Developing AI-based recommendation systems, directing LLM-driven algorithms for
                         video processing, building predictive engines using Big Data technologies, and
                         architecting comprehensive Feature Stores.
+                    </p>
+                    <p class="timeline-description lang-de">
+                        Entwicklung KI-basierter Empfehlungssysteme, Leitung LLM-gesteuerter Algorithmen für
+                        Videoverarbeitung, Aufbau von Predictive Engines mit Big-Data-Technologien und
+                        Architektur umfassender Feature Stores.
                     </p>
                     <div class="timeline-highlights">
                         <span class="timeline-highlight">Recommendation Systems</span>
@@ -1642,10 +1940,15 @@
                     <div class="timeline-date">Oct 2022 - June 2023</div>
                     <div class="timeline-company">SUITED (Deel) | Remote from EU</div>
                     <h3 class="timeline-role">Senior Machine Learning Engineer</h3>
-                    <p class="timeline-description">
+                    <p class="timeline-description lang-en">
                         Led development of secure, scalable data storage solutions. Pioneered data augmentation
                         strategies and authored compliance tests against US regulations for bias and discrimination
                         in predictive hiring models.
+                    </p>
+                    <p class="timeline-description lang-de">
+                        Leitung der Entwicklung sicherer, skalierbarer Datenspeicherlösungen. Datenaugmentierungs-
+                        strategien entwickelt und Compliance-Tests gegen US-Vorschriften für Bias und Diskriminierung
+                        in prädiktiven Einstellungsmodellen verfasst.
                     </p>
                     <div class="timeline-highlights">
                         <span class="timeline-highlight">Compliance Testing</span>
@@ -1658,10 +1961,15 @@
                     <div class="timeline-date">Nov 2019 - Sept 2022</div>
                     <div class="timeline-company">SCHWARZ IT | Heilbronn, Germany</div>
                     <h3 class="timeline-role">Data Engineer, AI Product Engineering</h3>
-                    <p class="timeline-description">
+                    <p class="timeline-description lang-en">
                         Championed PySpark adoption reducing KPI computation from 24 hours to 18 minutes.
                         Technical lead for pallet-loading optimization resulting in multi-million euro savings.
                         Organized internal developer conference with 42 presentations and 79 speakers.
+                    </p>
+                    <p class="timeline-description lang-de">
+                        PySpark-Einführung vorangetrieben und KPI-Berechnung von 24 Stunden auf 18 Minuten
+                        reduziert. Technische Leitung der Paletten-Ladeoptimierung mit mehreren Millionen Euro
+                        Einsparungen. Internes Entwickler-Event mit 42 Vorträgen und 79 Speakern organisiert.
                     </p>
                     <div class="timeline-highlights">
                         <span class="timeline-highlight">PySpark</span>
@@ -1674,10 +1982,15 @@
                     <div class="timeline-date">Oct 2013 - Mar 2019</div>
                     <div class="timeline-company">Ruprecht-Karls-University | Heidelberg</div>
                     <h3 class="timeline-role">M.Sc. Computer Science</h3>
-                    <p class="timeline-description">
+                    <p class="timeline-description lang-en">
                         Master's thesis on real-time data acquisition and analysis architecture for medical
                         devices using cloud services (GPA: 4.0). Bachelor's thesis on language learning
                         game development (GPA: 4.0).
+                    </p>
+                    <p class="timeline-description lang-de">
+                        Masterarbeit zur Echtzeit-Datenerfassungs- und Analysearchitektur für Medizingeräte
+                        mit Cloud-Services (Note: 1,0). Bachelorarbeit zur Entwicklung eines Sprachlern-Spiels
+                        (Note: 1,0).
                     </p>
                     <div class="timeline-highlights">
                         <span class="timeline-highlight">GPA: 3.8</span>
@@ -1690,16 +2003,63 @@
 
         <section id="projects">
             <div class="section-header reveal">
-                <div class="section-label">Projects</div>
-                <h2 class="section-title">Featured work</h2>
+                <div class="section-label">
+                    <span class="lang-en">Projects</span>
+                    <span class="lang-de">Projekte</span>
+                </div>
+                <h2 class="section-title">
+                    <span class="lang-en">Featured work</span>
+                    <span class="lang-de">Ausgewählte Projekte</span>
+                </h2>
             </div>
             <div class="projects-grid">
                 <div class="project-card reveal">
                     <div class="project-number">01</div>
-                    <h3 class="project-title">Public Sector AI Division</h3>
-                    <p class="project-description">
-                        Led the creation of a new AI division within a highly regulated government environment.
-                        Designed infrastructure for plausibility checking, covering architecture to implementation.
+                    <h3 class="project-title">
+                        <span class="lang-en">AI Enablement Review - Mittelstand</span>
+                        <span class="lang-de">KI-Enablement-Review - Mittelstand</span>
+                    </h3>
+                    <p class="project-description lang-en">
+                        Reviewed and redesigned the AI enablement plan for a mid-sized company before
+                        a single line of code was written. Found: an LLM integration that would have
+                        hallucinated on industrial data, storage decisions incompatible with cloud
+                        deployment, and three of seven use cases missing required training data.
+                        Delivered a new architecture that could actually be built, a prioritized use
+                        case list, phased roadmap, and a realistic cost model.
+                    </p>
+                    <p class="project-description lang-de">
+                        KI-Enablement-Plan eines Mittelstandsunternehmens bewertet und neu designed -
+                        bevor eine einzige Zeile Code geschrieben wurde. Gefunden: eine LLM-Integration,
+                        die auf Industriedaten halluziniert hätte, Storage-Entscheidungen inkompatibel
+                        mit Cloud-Deployment, und drei von sieben Use Cases ohne die erforderlichen
+                        Trainingsdaten. Geliefert: eine neue Architektur, die wirklich gebaut werden
+                        kann, priorisierte Use-Case-Liste, Phasen-Roadmap und realistisches Kostenmodell.
+                    </p>
+                    <div class="project-tech">
+                        <span>Architecture Review</span>
+                        <span>Use Case Analysis</span>
+                        <span>Cost Modeling</span>
+                        <span>Roadmap</span>
+                    </div>
+                </div>
+                <div class="project-card reveal">
+                    <div class="project-number">02</div>
+                    <h3 class="project-title">
+                        <span class="lang-en">Public Sector AI Division</span>
+                        <span class="lang-de">KI-Division im öffentlichen Sektor</span>
+                    </h3>
+                    <p class="project-description lang-en">
+                        Designed and built a new AI division from the ground up inside a highly regulated
+                        government environment. Designed the entire infrastructure architecture for automated
+                        plausibility checking - from initial architecture decisions through production
+                        deployment - under compliance constraints that ruled out most standard tooling.
+                    </p>
+                    <p class="project-description lang-de">
+                        KI-Abteilung von Grund auf in einem hochregulierten Behördenumfeld konzipiert
+                        und aufgebaut. Die gesamte Infrastrukturarchitektur für automatisierte
+                        Plausibilitätsprüfungen designed - von den initialen Architekturentscheidungen
+                        bis zur Produktions-Deployment - unter Compliance-Anforderungen, die die meisten
+                        Standard-Tools ausschlossen.
                     </p>
                     <div class="project-tech">
                         <span>Python</span>
@@ -1709,11 +2069,24 @@
                     </div>
                 </div>
                 <div class="project-card reveal">
-                    <div class="project-number">02</div>
-                    <h3 class="project-title">Gaming Platform Architecture</h3>
-                    <p class="project-description">
-                        Complete overhaul of data and AI architecture for a game development company.
-                        From system audit to AI-ready platform enabling personalized gaming experiences.
+                    <div class="project-number">03</div>
+                    <h3 class="project-title">
+                        <span class="lang-en">Gaming Platform Architecture</span>
+                        <span class="lang-de">Gaming-Plattform-Architektur</span>
+                    </h3>
+                    <p class="project-description lang-en">
+                        The existing architecture couldn't support AI use cases. Redesigned the complete
+                        data and AI architecture from scratch: audited the system, identified structural
+                        bottlenecks blocking ML workloads, and designed new storage and compute layers.
+                        Delivered an AI-ready platform that finally enabled the personalization features
+                        the team had been trying to ship for 18 months.
+                    </p>
+                    <p class="project-description lang-de">
+                        Die bestehende Architektur konnte keine KI-Use Cases unterstützen. Vollständige
+                        Daten- und KI-Architektur von Grund auf neu designed: System geprüft, strukturelle
+                        Engpässe identifiziert, neue Storage- und Compute-Schichten designed und eine
+                        KI-fähige Plattform geliefert, die endlich die Personalisierungsfeatures
+                        ermöglichte, die das Team seit 18 Monaten zu liefern versuchte.
                     </p>
                     <div class="project-tech">
                         <span>PySpark</span>
@@ -1723,11 +2096,19 @@
                     </div>
                 </div>
                 <div class="project-card reveal">
-                    <div class="project-number">03</div>
-                    <h3 class="project-title">Predictive Recommendation Engine</h3>
-                    <p class="project-description">
+                    <div class="project-number">04</div>
+                    <h3 class="project-title">
+                        <span class="lang-en">Predictive Recommendation Engine</span>
+                        <span class="lang-de">Prädiktive Recommendation Engine</span>
+                    </h3>
+                    <p class="project-description lang-en">
                         Built a recommendation engine for a major entertainment company using Big Data technologies.
                         Enhanced user engagement and retention through personalized content.
+                    </p>
+                    <p class="project-description lang-de">
+                        Aufbau einer Recommendation Engine für ein großes Entertainmentunternehmen mit
+                        Big-Data-Technologien. Steigerung von Nutzerengagement und Retention durch
+                        personalisierte Inhalte.
                     </p>
                     <div class="project-tech">
                         <span>Spark</span>
@@ -1737,11 +2118,18 @@
                     </div>
                 </div>
                 <div class="project-card reveal">
-                    <div class="project-number">04</div>
-                    <h3 class="project-title">Pallet-Loading Optimization</h3>
-                    <p class="project-description">
+                    <div class="project-number">05</div>
+                    <h3 class="project-title">
+                        <span class="lang-en">Pallet-Loading Optimization</span>
+                        <span class="lang-de">Paletten-Ladeoptimierung</span>
+                    </h3>
+                    <p class="project-description lang-en">
                         Technical lead for optimization solution at SCHWARZ IT that resulted in multi-million
                         euro savings by enhancing operational efficiency and reducing truck loading times.
+                    </p>
+                    <p class="project-description lang-de">
+                        Technische Leitung der Optimierungslösung bei SCHWARZ IT mit mehreren Millionen Euro
+                        Einsparungen durch verbesserte Betriebseffizienz und reduzierte LKW-Ladezeiten.
                     </p>
                     <div class="project-tech">
                         <span>Python</span>
@@ -1751,25 +2139,18 @@
                     </div>
                 </div>
                 <div class="project-card reveal">
-                    <div class="project-number">05</div>
-                    <h3 class="project-title">Geospatial Solar Analysis</h3>
-                    <p class="project-description">
-                        Developed analytics model to calculate rooftop sizes suitable for solar energy installations.
-                        Enabled renewable energy clients to optimize site selection at scale.
-                    </p>
-                    <div class="project-tech">
-                        <span>Geospatial</span>
-                        <span>Python</span>
-                        <span>Analytics</span>
-                        <span>ML</span>
-                    </div>
-                </div>
-                <div class="project-card reveal">
                     <div class="project-number">06</div>
-                    <h3 class="project-title">AI Compliance Framework</h3>
-                    <p class="project-description">
+                    <h3 class="project-title">
+                        <span class="lang-en">AI Compliance Framework</span>
+                        <span class="lang-de">KI-Compliance-Framework</span>
+                    </h3>
+                    <p class="project-description lang-en">
                         Authored compliance tests against US regulations for bias and discrimination in
                         predictive hiring models, ensuring ethical AI deployment.
+                    </p>
+                    <p class="project-description lang-de">
+                        Compliance-Tests gegen US-Vorschriften für Bias und Diskriminierung in prädiktiven
+                        Einstellungsmodellen verfasst, um ethischen KI-Einsatz sicherzustellen.
                     </p>
                     <div class="project-tech">
                         <span>Data Ethics</span>
@@ -1783,8 +2164,14 @@
 
         <section id="skills">
             <div class="section-header reveal">
-                <div class="section-label">Skills</div>
-                <h2 class="section-title">Technologies & expertise</h2>
+                <div class="section-label">
+                    <span class="lang-en">Skills</span>
+                    <span class="lang-de">Kompetenzen</span>
+                </div>
+                <h2 class="section-title">
+                    <span class="lang-en">Technologies & expertise</span>
+                    <span class="lang-de">Technologien & Expertise</span>
+                </h2>
             </div>
             <div class="skills-container">
                 <div class="skill-category reveal">
@@ -1848,13 +2235,16 @@
                     </div>
                 </div>
                 <div class="skill-category reveal">
-                    <h3 class="skill-category-title">Core ML Competencies</h3>
+                    <h3 class="skill-category-title">
+                        <span class="lang-en">Architecture & Strategy</span>
+                        <span class="lang-de">Architektur & Strategie</span>
+                    </h3>
                     <div class="skill-list">
-                        <span class="skill-item">Recommendation Systems</span>
-                        <span class="skill-item">Feature Engineering</span>
-                        <span class="skill-item">Clustering</span>
-                        <span class="skill-item">Time Series</span>
-                        <span class="skill-item">Anomaly Detection</span>
+                        <span class="skill-item">Architecture Review</span>
+                        <span class="skill-item">Use Case Assessment</span>
+                        <span class="skill-item">Cost Modeling</span>
+                        <span class="skill-item">Roadmap Planning</span>
+                        <span class="skill-item">Feasibility Analysis</span>
                         <span class="skill-item">Explainable AI</span>
                     </div>
                 </div>
@@ -1864,11 +2254,25 @@
         <section id="contact">
             <div class="contact">
                 <div class="section-header reveal">
-                    <div class="section-label">Contact</div>
-                    <h2 class="section-title">Let's work together</h2>
-                    <p class="contact-subtitle">
-                        Have a project in mind? I'd love to hear about it. Let's discuss how I can
-                        help you achieve your AI and data goals.
+                    <div class="section-label">
+                        <span class="lang-en">Contact</span>
+                        <span class="lang-de">Kontakt</span>
+                    </div>
+                    <h2 class="section-title">
+                        <span class="lang-en">Is your AI plan ready to build?</span>
+                        <span class="lang-de">Ist Ihr KI-Plan bereit zum Bauen?</span>
+                    </h2>
+                    <p class="contact-subtitle lang-en">
+                        If you're planning an AI initiative and haven't had an independent
+                        architecture review, you're carrying risk you can't yet quantify.
+                        Let's talk - not a pitch, just an honest conversation about whether
+                        what you're planning will hold.
+                    </p>
+                    <p class="contact-subtitle lang-de">
+                        Wenn Sie eine KI-Initiative planen und noch kein unabhängiges Architektur-Review
+                        hatten, tragen Sie Risiken, die Sie noch nicht beziffern können.
+                        Lassen Sie uns reden - kein Verkaufsgespräch, sondern ein ehrliches Gespräch
+                        darüber, ob das, was Sie planen, wirklich trägt.
                     </p>
                 </div>
                 <div class="contact-grid">
@@ -1879,15 +2283,19 @@
                                 <input class="form-input" type="text" id="name" name="name" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="email">Email</label>
+                                <label class="form-label" for="email">E-Mail</label>
                                 <input class="form-input" type="email" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="message">Message</label>
+                                <label class="form-label" for="message">
+                                    <span class="lang-en">Message</span>
+                                    <span class="lang-de">Nachricht</span>
+                                </label>
                                 <textarea class="form-textarea" id="message" name="message" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary form-submit">
-                                Send Message
+                                <span class="lang-en">Send Message</span>
+                                <span class="lang-de">Nachricht senden</span>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
                                 </svg>
@@ -1899,8 +2307,12 @@
                                     <path d="M20 6L9 17l-5-5"/>
                                 </svg>
                             </div>
-                            <h3 class="form-success-title">Thank you!</h3>
-                            <p class="form-success-message">Your message has been sent successfully.<br>I'll get back to you soon.</p>
+                            <h3 class="form-success-title">
+                                <span class="lang-en">Thank you!</span>
+                                <span class="lang-de">Vielen Dank!</span>
+                            </h3>
+                            <p class="form-success-message lang-en">Your message has been sent successfully.<br>I'll get back to you soon.</p>
+                            <p class="form-success-message lang-de">Ihre Nachricht wurde erfolgreich gesendet.<br>Ich melde mich in Kürze.</p>
                         </div>
                     </form>
                     <div class="contact-info reveal">
@@ -1968,7 +2380,7 @@
 
     <footer>
         <div class="footer-text">
-            &copy; 2024 Nina Hajok. All rights reserved.
+            &copy; 2026 Nina Hajok. All rights reserved.
             &nbsp;&middot;&nbsp;
             <span class="footer-legal" onclick="document.getElementById('impressum-overlay').classList.add('active')">Impressum</span>
         </div>
@@ -2188,6 +2600,33 @@
                 }
             });
         });
+
+        // Language Toggle
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const isDE = html.classList.contains('lang-de');
+            if (isDE) {
+                html.classList.remove('lang-de');
+                html.lang = 'en';
+                document.querySelector('.lang-toggle').textContent = 'DE';
+                localStorage.setItem('site-lang', 'en');
+            } else {
+                html.classList.add('lang-de');
+                html.lang = 'de';
+                document.querySelector('.lang-toggle').textContent = 'EN';
+                localStorage.setItem('site-lang', 'de');
+            }
+        }
+
+        (function() {
+            const saved = localStorage.getItem('site-lang');
+            if (saved === 'de') {
+                document.documentElement.classList.add('lang-de');
+                document.documentElement.lang = 'de';
+                const btn = document.querySelector('.lang-toggle');
+                if (btn) btn.textContent = 'EN';
+            }
+        })();
 
         // Contact form AJAX submission
         const contactForm = document.getElementById('contact-form');
